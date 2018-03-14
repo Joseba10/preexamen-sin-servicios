@@ -1,5 +1,5 @@
 
-<div   *ngFor="let resultado of todos" class="galeria .col-sm-6">
+<div   *ngFor="let resultado of vivienda" class="galeria .col-sm-6">
  
   <img src="{{resultado.foto}}">
  <!--  {{resultado | json}} -->
@@ -11,9 +11,6 @@
   <p> <i class="fa fa-home" aria-hidden="true"></i> Habitaciones: {{resultado.habitaciones}} </p>
   <p *ngIf="resultado.alquiler">Tipo: Alquiler</p>
   <p *ngIf="!resultado.alquiler">Tipo: Venta</p>
-  <div *ngFor="let servicios of servicio">
-      <p>Servicios:</p>
-      <p>TV {{resultado.servicios.tv}}</p>
-    </div>
+  
 
 </div>

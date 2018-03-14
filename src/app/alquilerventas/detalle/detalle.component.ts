@@ -12,10 +12,10 @@ export class DetalleComponent implements OnInit {
 
 
   vivienda: alquiler[];
-  servicios: ServicioService[];
-  
-  
-  constructor(public servicioService: ServicioService) { 
+servicios:ServicioService;
+
+
+  constructor(public servicioService: ServicioService) {
 
     this.vivienda = [];
   }
@@ -36,7 +36,7 @@ export class DetalleComponent implements OnInit {
 
   mapeo(result: any) {
 
-    let caracteristicas: alquiler,servicios: servicio;;
+    let caracteristicas: alquiler;
     result.forEach(el => {
       caracteristicas = new alquiler();
       caracteristicas.nombre = el.nombre;
@@ -46,26 +46,15 @@ export class DetalleComponent implements OnInit {
       caracteristicas.habitaciones = el.habitaciones;
       caracteristicas.alquiler = el.alquiler;
 
-      
-      el.service.forEach(s => {
-        servicios = new servicio();
-        servicios.nombre = s.nombre;
-        servicios.disponible = s.disponible;
-       
-      
-
-      caracteristicas.servicio.push(s);
-
-    }),
-  
-  this.vivienda.push(caracteristicas);
-
-    
+        this.vivienda.push(caracteristicas);
 
 
 
 
-  }
 
 
+    })
+
+
+}
 }
