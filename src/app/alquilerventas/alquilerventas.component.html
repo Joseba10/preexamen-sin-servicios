@@ -1,0 +1,43 @@
+<div class="container">
+<h1>Inmobiliaria Alquila o Compra</h1>
+<div class="busqueda .col-sm-6">
+<form>
+
+<label class="center-block">Buscar Casa:</label>
+<input type="text" placeholder="Buscar casa">
+<br>
+
+<label class="center-block">Alquiler:</label>
+<input type="checkbox" name="alquiler">
+<br>
+<label class="center-block">Venta:</label>
+  <input type="checkbox" name="venta">
+
+  <br>
+Precio  <label class="center-block">min:</label>
+    <input type="text" name="min">
+<label class="center-block">max:</label>
+  <input type="text" name="max">
+
+<input type="submit">
+</form>
+
+
+</div> 
+
+<hr>
+
+
+<app-detalle></app-detalle>
+<div   *ngFor="let resultado of todos" class="galeria .col-sm-6  ">
+
+
+  <img src="{{resultado.foto}}">
+<p>Nombre: {{resultado.nombre}} Precio:  {{resultado.precio}}</p>
+  
+
+  </div>
+
+
+</div>
+
